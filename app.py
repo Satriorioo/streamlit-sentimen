@@ -2,11 +2,11 @@ import streamlit as st
 import preprocessing
 import sentiment_analysis
 import visualization
-import download_results
+import model_testing  
 
 st.sidebar.title("📌 Navigasi Menu")
 menu = st.sidebar.radio("Pilih Halaman", 
-                        ["🏠 Dashboard", "📝 Preprocessing Teks", "📊 Analisis Sentimen", "📈 Visualisasi Data", "📂 Download Hasil"])
+                        ["🏠 Dashboard", "📝 Preprocessing Teks", "📊 Analisis Sentimen", "📈 Visualisasi Data", "🧪 Uji Model"])
 
 if menu == "🏠 Dashboard":
     st.title("📊 Aplikasi Analisis Sentimen")
@@ -23,7 +23,7 @@ if menu == "🏠 Dashboard":
     - **📝 Preprocessing Teks**: Membersihkan data teks dari URL, HTML, emoji, tanda baca, angka, serta melakukan stemming dan normalisasi.
     - **📊 Analisis Sentimen**: Menentukan apakah teks memiliki sentimen positif, negatif, atau netral berdasarkan metode lexicon-based.
     - **📈 Visualisasi Data**: Menampilkan hasil analisis dalam bentuk grafik pie, bar chart, word cloud, dan frekuensi kata.
-    - **📂 Download Hasil**: Mengunduh hasil analisis sentimen dalam format CSV untuk keperluan lebih lanjut.
+    - **🧪 Uji Model**: Menguji model analisis sentimen pada teks inputan secara real-time.
     """)
 
 elif menu == "📝 Preprocessing Teks":
@@ -35,5 +35,5 @@ elif menu == "📊 Analisis Sentimen":
 elif menu == "📈 Visualisasi Data":
     visualization.show()
 
-elif menu == "📂 Download Hasil":
-    download_results.show()
+elif menu == "🧪 Uji Model":
+    model_testing.show()  
